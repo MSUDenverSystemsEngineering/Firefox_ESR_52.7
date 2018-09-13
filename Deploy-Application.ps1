@@ -67,7 +67,7 @@ Try {
 	## Variables: Application
 	[string]$appVendor = 'Mozilla'
 	[string]$appName = 'Firefox'
-	[string]$appVersion = 'ESR 52.7.2'
+	[string]$appVersion = '52.7.2'
 	[string]$appArch = ''
 	[string]$appLang = 'EN'
 	[string]$appRevision = '01'
