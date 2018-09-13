@@ -129,11 +129,11 @@ Try {
 		## <Perform Pre-Installation tasks here>
 
 		## Uninstall previous version of Firefox
-		If (Test-Path -Path "${envProgramFilesX86}\Mozilla Firefox" -PathType 'Container') {
+		If (Test-Path -Path "${envProgramFilesX86}\Mozilla Firefox\uninstall" -PathType 'Container') {
 			$exitCode = Execute-Process -Path "$envProgramFilesX86\Mozilla Firefox\uninstall\helper.exe" -Parameters "/S" -WindowStyle "Hidden" -WaitForMsiExec -PassThru
 		If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 		}
-		
+
 		## Check for default user Mozilla data
 		If (Test-Path -Path "${envSystemDrive}\Users\Default\AppData\Local\Mozilla" -PathType 'Container') {
 			Write-Log -Message "Removing default user Local app data for Firefox..." -Severity 1
